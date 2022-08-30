@@ -1,3 +1,4 @@
+import { HttpBackend } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { GifsService } from 'src/app/gifs/services/gifs.service';
 
@@ -11,7 +12,8 @@ export class SidebarComponent {
   get historial(){
     return this.gifsService.historial;
   }
-
   constructor(private gifsService: GifsService) { }
-
+  public buscar( valorBusqueda: string):void {
+    this.gifsService.buscarGifs(valorBusqueda);
+  }
 }
